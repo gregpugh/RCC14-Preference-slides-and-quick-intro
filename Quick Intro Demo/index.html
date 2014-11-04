@@ -1,0 +1,164 @@
+<!doctype html>
+<html ng-app="introApp">
+<head>
+    <title>Resources</title>
+    <link href="foundation.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--1-->
+    <!--
+            <h1>{{2+2}}</h1>
+            <h1>{{"Raleigh" + "Code" + "Camp" + "14"}}</h1>
+            <input type="text" ng-model="data.message" />
+
+            <h1>{{data.message}}</h1>
+            <h1>{{data.message + " world"}}</h1>
+
+            <div class="{{data.message}}">
+                wrap me with a panel
+            </div>
+    -->
+    <!--2-->
+    <!-- 2
+        <div ng-controller="FirstCtrl">
+
+            <input type="text" ng-model="data.message" />
+
+            <h1>{{data.message + " world"}}</h1>
+
+            <div class="{{data.message}}">
+                Please wrap me in a panel.
+            </div>
+        </div>
+     -->
+    <!--3-->
+    <!--3
+            <div ng-controller="FirstCtrl">
+                <input type="text" ng-model="data.message" />
+                <h1>{{data.message}}</h1>
+            </div>
+
+            <div ng-controller="SecondCtrl">
+                <input type="text" ng-model="data.message" />
+                <h1>{{reversedMessage()}}</h1>
+            </div>
+
+            <div ng-controller="ThirdCtrl">
+                <input type="text" ng-model="data.message" />
+                <h1>{{reversedMessage(data.message)}}</h1>
+            </div>
+    -->
+    <!--4-->
+    <!--4
+            <div ng-controller="FirstCtrl">
+                <input type="text" ng-model="data.message" />
+                <h1>{{data.message}}</h1>
+            </div>
+
+            <div ng-controller="FilterCtrl">
+                <input type="text" ng-model="data.message" />
+                <h1>{{data.message | reverse }}</h1>
+            </div>
+    -->
+    <!--5-->
+    <!--5
+
+        <div ng-controller="ResourcesCtrl">
+            <table class="table">
+                <tr>
+                    <th>Title</th>
+                    <th>Url</th>
+                    <th>Author</th>
+                    <th>Type</th>
+                    <th>Summary</th>
+                </tr>
+                <tr ng-repeat="resource in resources" >
+                    <td>{{ resource.title}}</td>
+                    <td>{{ resource.url }}</td>
+                    <td>{{ resource.author }}</td>
+                    <td>{{ resource.type}}</td>
+                    <td>{{ resource.summary}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <br />
+            <span>Number of Resources: {{ resources.length }}</span>
+        <br />
+
+    -->
+    <!--6 Sorting and Formatting-->
+    <!--6
+
+        
+    <div ng-controller="ResourcesCtrl">
+        <table class="table">
+            <tr>
+                <th>Title</th>
+                <th>Url</th>
+                <th>Author</th>
+                <th>Type</th>
+                <th>Summary</th>
+            </tr>
+            <tr ng-repeat="resource in resources | orderBy:'title' ">
+                <td>{{ resource.title}}</td>
+                <td>{{ resource.url }}</td>
+                <td>{{ resource.author }}</td>
+                <td>{{ resource.type | uppercase}}</td>
+                <td>{{ resource.summary }}</td>
+            </tr>
+        </table>
+
+        <br />
+        <span>Number of Resources: {{ resources.length }}</span>
+        <br />
+    </div>
+    
+    -->
+
+    <!--7 Filtering-->
+    <!--7
+
+        <div class="medium-2">
+            Title Filter: <input type="text" ng-model="resourcesFilter.title"/>
+        </div>
+        <div class="medium-2">
+            Author Filter: <input type="text" ng-model="resourcesFilter.author"  />
+        </div>
+        <div class="medium-2">
+            All columns Filter: <input type="text" ng-model="resourcesFilter.$" />
+        </div>
+
+        <div ng-controller="ResourcesCtrl">
+            <table class="table">
+                <tr>
+                    <th>Title</th>
+                    <th>Url</th>
+                    <th>Author</th>
+                    <th>Type</th>
+                    <th>Summary</th>
+                </tr>
+                <tr ng-repeat="resource in resources | filter:resourcesFilter | orderBy:'title' " >
+                    <td>{{ resource.title}}</td>
+                    <td>{{ resource.url }}</td>
+                    <td>{{ resource.author }}</td>
+                    <td>{{ resource.type | uppercase}}</td>
+                    <td>{{ resource.summary }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <br />
+            <span>Number of Resources: {{ resources.length }}</span>
+        <br />
+
+    -->
+
+
+    <script src="angular.js"></script>
+    <script src="main.js"></script>
+
+
+</body>
+</html>
